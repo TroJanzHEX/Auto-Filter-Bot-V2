@@ -25,7 +25,37 @@ from database.mdb import (
 @Client.on_message(filters.group & filters.command(["add"]))
 async def addchannel(client: Bot, message: Message):
 
-    cmd, chid = message.text.split(" ", 1)
+    try:
+        cmd, text = message.text.split(" ", 1)
+    except:
+        await message.reply_text(
+            "<i>Enter in correct format!\n\n<code>/add channelid</code>  or\n"
+            "<code>/add @channelusername</code></i>"
+            "\n\nGet Channel id from @ChannelidHEXbot",
+        )
+        return
+    try:
+        if not text.startswith("@"):
+            chid = int(text)
+            if not len(text) == 14:
+                await message.reply_text(
+                    "Enter valid channel ID"
+                )
+                return
+        elif text.startswith("@"):
+            chid = text
+            if not len(chid) > 2:
+                await message.reply_text(
+                    "Enter valid channel username"
+                )
+                return
+    except Exception:
+        await message.reply_text(
+            "Enter a valid ID\n"
+            "ID will be in <b>-100xxxxxxxxxx</b> format\n"
+            "You can also use username of channel with @ symbol",
+        )
+        return
 
     try:
         invitelink = await client.export_chat_invite_link(chid)
@@ -119,7 +149,37 @@ async def addchannel(client: Bot, message: Message):
 @Client.on_message(filters.group & filters.command(["del"]))
 async def deletechannelfilters(client: Bot, message: Message):
 
-    cmd, chid = message.text.split(" ", 1)
+    try:
+        cmd, text = message.text.split(" ", 1)
+    except:
+        await message.reply_text(
+            "<i>Enter in correct format!\n\n<code>/del channelid</code>  or\n"
+            "<code>/del @channelusername</code></i>"
+            "\n\nrun /filterstats to see connected channels",
+        )
+        return
+    try:
+        if not text.startswith("@"):
+            chid = int(text)
+            if not len(text) == 14:
+                await message.reply_text(
+                    "Enter valid channel ID\n\nrun /filterstats to see connected channels"
+                )
+                return
+        elif text.startswith("@"):
+            chid = text
+            if not len(chid) > 2:
+                await message.reply_text(
+                    "Enter valid channel username"
+                )
+                return
+    except Exception:
+        await message.reply_text(
+            "Enter a valid ID\n"
+            "run /filterstats to see connected channels\n"
+            "You can also use username of channel with @ symbol",
+        )
+        return
 
     try:
         chatdetails = await client.USER.get_chat(chid)
