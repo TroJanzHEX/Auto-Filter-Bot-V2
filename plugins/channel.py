@@ -129,6 +129,8 @@ async def addchannel(client: Bot, message: Message):
                 pass
     except:
         pass
+    
+    await asyncio.sleep(5)
 
     try:
         async for msg in client.USER.search_messages(channel_id,filter='video'):
