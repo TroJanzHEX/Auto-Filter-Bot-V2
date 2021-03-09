@@ -9,7 +9,7 @@
         "TroJanzHEX"
     ],
     "website": "https://TroJanzHEX.me",
-    "repository": "https://github.com/TroJanzHEX/Auto-Filter-Bot",
+    "repository": "https://github.com/TroJanzHEX/Auto-Filter-Bot-V2",
     "success_url": "https://telegram.dog/TroJanzHEX",
     "env": {
         "TG_BOT_TOKEN": {
@@ -28,9 +28,17 @@
             "description": "A pyrogram user session string. Generate from https://repl.it/@SpEcHiDe/GenerateStringSession",
             "value": ""
         },
-        "MAINCHANNEL_ID": {
-            "description": "ID of Channel from which the bot should search files",
+        "AUTH_USERS": {
+            "description": "ID of users that can use the bot commands",
             "value": ""
+        },
+        "DATABASE_URI": {
+            "description": "Database URL from https://cloud.mongodb.com/",
+            "value": ""
+        },
+        "DATABASE_NAME": {
+            "description": "Your database name from mongoDB. ( Default will 'Cluster0' )",
+            "value": "Cluster0"
         }
     },
     "buildpacks": [
