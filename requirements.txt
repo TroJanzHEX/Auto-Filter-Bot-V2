@@ -1,4 +1,5 @@
 Pyrogram
 TgCrypto
-
+umongo
+dnspython
 

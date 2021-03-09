@@ -21,6 +21,7 @@ from pyrogram.types import (
 from bot import Bot
 from script import script
 from config import MAINCHANNEL_ID
+from database.mdb import searchquery
 
 BUTTONS = {}
  
@@ -29,15 +30,20 @@ async def filter(client: Bot, message: Message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
 
-    if len(message.text) > 2:    
+    if 2 < len(message.text) < 50:    
         btn = []
-        async for msg in client.USER.search_messages(MAINCHANNEL_ID,query=message.text,filter='document'):
-            file_name = msg.document.file_name
-            msg_id = msg.message_id                     
-            link = msg.link
-            btn.append(
-                [InlineKeyboardButton(text=f"{file_name}",url=f"{link}")]
-            )
+
+        group_id = message.chat.id
+        name = message.text
+
+        filenames, links = await searchquery(group_id, name)
+        if filenames and links:
+            for filename, link in zip(filenames, links):
+                btn.append(
+                    [InlineKeyboardButton(text=f"{filename}",url=f"{link}")]
+                )
+        else:
+            return
 
         if not btn:
             return
