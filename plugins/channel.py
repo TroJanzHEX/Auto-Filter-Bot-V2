@@ -283,7 +283,8 @@ async def stats(client: Bot, message: Message):
             stats += details
             n = n + 1
     else:
-        stats += "No channels connected in current group!!"
+        stats += "\nNo channels connected in current group!!"
+        await message.reply_text(stats)
         return
 
     total = await countfilters(group_id)
