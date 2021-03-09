@@ -16,9 +16,6 @@ API_HASH = os.environ.get("API_HASH", "")
 # Generate a user session string 
 TG_USER_SESSION = os.environ.get("TG_USER_SESSION", "")
 
-# ID of Channel from which the bot shoul search files
-MAINCHANNEL_ID = os.environ.get("MAINCHANNEL_ID", "")
-
 # Database URL from https://cloud.mongodb.com/
 DATABASE_URI = os.environ.get("DATABASE_URI", "")
 
