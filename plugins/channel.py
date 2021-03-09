@@ -107,31 +107,37 @@ async def addchannel(client: Bot, message: Message):
     docs = []
     try:
         async for msg in client.USER.search_messages(channel_id,filter='document'):
-            file_name = msg.document.file_name
-            file_id = msg.document.file_id                    
-            link = msg.link
-            data = {
-                '_id': file_id,
-                'channel_id' : channel_id,
-                'file_name': file_name,
-                'link': link
-            }
-            docs.append(data)
+            try:
+                file_name = msg.document.file_name
+                file_id = msg.document.file_id                    
+                link = msg.link
+                data = {
+                    '_id': file_id,
+                    'channel_id' : channel_id,
+                    'file_name': file_name,
+                    'link': link
+                }
+                docs.append(data)
+            except:
+                pass
     except:
         pass
 
     try:
         async for msg in client.USER.search_messages(channel_id,filter='video'):
-            file_name = msg.video.file_name
-            file_id = msg.video.file_id                    
-            link = msg.link
-            data = {
-                '_id': file_id,
-                'channel_id' : channel_id,
-                'file_name': file_name,
-                'link': link
-            }
-            docs.append(data)
+            try:
+                file_name = msg.video.file_name
+                file_id = msg.video.file_id                    
+                link = msg.link
+                data = {
+                    '_id': file_id,
+                    'channel_id' : channel_id,
+                    'file_name': file_name,
+                    'link': link
+                }
+                docs.append(data)
+            except:
+                pass
     except:
         pass
 
