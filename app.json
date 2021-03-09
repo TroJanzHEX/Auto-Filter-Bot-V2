@@ -25,7 +25,7 @@
             "value": ""
         },
         "TG_USER_SESSION": {
-            "description": "A pyrogram user session string. Generate from https://repl.it/@SpEcHiDe/GenerateStringSession",
+            "description": "A pyrogram user session string. Generate from https://repl.it/@prgofficial/String-Gen",
             "value": ""
         },
         "AUTH_USERS": {
