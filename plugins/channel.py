@@ -18,7 +18,9 @@ from database.mdb import (
     channelgroup,
     ifexists,
     deletealldetails,
-    findgroupid
+    findgroupid,
+    channeldetails,
+    countfilters
 )
 
 
@@ -247,7 +249,33 @@ async def deleteallfilters(client: Bot, message: Message):
     elif delete_all == 2:
         await intmsg.edit_text(
             "Couldn't delete filters. Try again after sometime.."
-        )  
+        )
+
+
+@Client.on_message(filters.group & filters.command(["filterstats"]))
+async def stats(client: Bot, message: Message):
+
+    group_id = message.chat.id
+    group_name = message.chat.title
+
+    stats = f"Stats for Auto Filter Bot in {group_name}\n\n<b>Connected channels ;</b>"
+
+    chdetails = await channeldetails(group_id)
+    if chdetails:
+        n = 0
+        for eachdetail in chdetails:
+            details = f"\n{n+1} : {eachdetail}"
+            stats += details
+            n = n + 1
+    else:
+        stats += "No channels connected in current group!!"
+        return
+
+    total = await countfilters(group_id)
+    if total:
+        stats += f"\n\n<b>Total number of filters</b> : {total}"
+
+    await message.reply_text(stats)
 
 
 @Client.on_message(filters.channel & (filters.document | filters.video))

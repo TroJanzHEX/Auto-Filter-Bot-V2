@@ -123,6 +123,34 @@ async def deletegroupcol(group_id):
         return 0
 
 
+async def channeldetails(group_id):
+    mycol = mydb["ALL DETAILS"]
+
+    query = mycol.count_documents( {"_id": group_id} )
+    if query == 0:
+        return False
+    else:
+        ids = mycol.find( {'_id': group_id} )
+        chdetails = []
+        for id in ids:
+            for chid in id['channel_details']:
+                chdetails.append(
+                    str(chid['channel_name']) + " ( <code>" + str(chid['channel_id']) + "</code> )"
+                )
+            return chdetails
+
+
+async def countfilters(group_id):
+    mycol = mydb[str(group_id)]
+
+    query = mycol.count()
+
+    if query == 0:
+        return False
+    else:
+        return query
+
+        
 async def findgroupid(channel_id):
     mycol = mydb["ALL DETAILS"]
 
@@ -134,7 +162,7 @@ async def findgroupid(channel_id):
                 groupids.append(id['_id'])
     return groupids
 
-    
+
 async def searchquery(group_id, name):
 
     mycol = mydb[str(group_id)]
