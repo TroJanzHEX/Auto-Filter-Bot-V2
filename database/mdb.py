@@ -123,6 +123,18 @@ async def deletegroupcol(group_id):
         return 0
 
 
+async def findgroupid(channel_id):
+    mycol = mydb["ALL DETAILS"]
+
+    ids = mycol.find()
+    groupids = []
+    for id in ids:
+        for chid in id['channel_details']:
+            if channel_id == chid['channel_id']:
+                groupids.append(id['_id'])
+    return groupids
+
+    
 async def searchquery(group_id, name):
 
     mycol = mydb[str(group_id)]

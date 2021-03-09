@@ -17,7 +17,8 @@ from database.mdb import (
     deletegroupcol,
     channelgroup,
     ifexists,
-    deletealldetails
+    deletealldetails,
+    findgroupid
 )
 
 
@@ -221,6 +222,7 @@ async def deletechannelfilters(client: Bot, message: Message):
             "Couldn't delete Channel"
         )
 
+
 @Client.on_message(filters.group & filters.command(["delall"]))
 async def deleteallfilters(client: Bot, message: Message):
 
@@ -246,3 +248,28 @@ async def deleteallfilters(client: Bot, message: Message):
         await intmsg.edit_text(
             "Couldn't delete filters. Try again after sometime.."
         )  
+
+
+@Client.on_message(filters.channel & (filters.document | filters.video))
+async def addnewfiles(client: Bot, message: Message):
+
+    media = message.document or message.video
+
+    channel_id = message.chat.id
+    file_name = media.file_name
+    file_id = media.file_id
+    link = message.link
+
+    docs = []
+    data = {
+        '_id': file_id,
+        'channel_id' : channel_id,
+        'file_name': file_name,
+        'link': link
+    }
+    docs.append(data)
+
+    groupids = await findgroupid(channel_id)
+    if groupids:
+        for group_id in groupids:
+            await savefiles(docs, group_id)
