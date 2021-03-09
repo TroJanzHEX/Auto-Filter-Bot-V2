@@ -29,21 +29,41 @@
 
 
 #### You can call this as an Auto Filter Bot if you like :D
+#### This is Version 2 of [Auto Filter Bot](https://github.com/TroJanzHEX/Auto-Filter-Bot)
 #### Bot simply search for the files from provided channel according to given query and gives link to those files as buttons!
 
 ## How to use the bot
-* Add user account to your channel !
-* Add bot to group with admin rights.
-* Deploy the bot.
-* Once deployed and bot is started, send a message to channel (must do step)
-* Bot will work now :)
+* Add bot to your group with admin rights.
+
+* Add bot to all channels which you want to link with all admin rights!
+
+## Bot Commands - Works in Group only
+
+(You need to be a Auth User in order to use these commands)
+
+* /add channelid  -  Links channel to your group.
+or
+* /add @channelusername - Links channel to your group.
+
+<i>NOTE : You can get your channel ID from @ChannelidHEXbot </i>
 
 
-## You can check the video tutorial on how to deploy
+* /del channelid  -  Delinks channel from group
+or
+* /del @channelusername  -  Delinks channel from group
+
+<i>NOTE : You can get connected channel details by /filterstats </i>
+
+
+* /delall  -  Removes all connected channels and filters from group!
+
+* /filterstats  -  Check connected channels and number of filters.
+
+<!-- ## You can check the video tutorial on how to deploy
 
 [Click here to see tutorial video](https://youtu.be/KQVYQAOsFYY)
 
-Thanks to [InfotelGroup](https://telegram.dog/InFoTelGroup) and [Erich Daniken](https://telegram.dog/ErichDaniken) for the video
+Thanks to [InfotelGroup](https://telegram.dog/InFoTelGroup) and [Erich Daniken](https://telegram.dog/ErichDaniken) for the video -->
 
 ## Any bugs or errors or suggestions, report at [TroJanzSupport](https://telegram.dog/TroJanzSupport)
 
@@ -72,7 +92,11 @@ python3 main.py
 
 * TG_USER_SESSION  - A pyrogram user session string. Generate by [clicking here](https://repl.it/@SpEcHiDe/GenerateStringSession)
 
-* MAINCHANNEL_ID - Obtain ID of Channel by forwarding a message from your channel to [ChannelIDHEXbot](https://telegram.dog/channelidhexbot)
+* AUTH_USERS  - ID of users that can use the bot commands. Get from [MissRose Bot](https://telegram.dog/MissRose_bot) by using /id command
+
+* DATABASE_URI  - Mongo Database URL from https://cloud.mongodb.com/
+
+* DATABASE_NAME  - Your database name from mongoDB. Default will be 'Cluster0'
 
 ## Credits
 
