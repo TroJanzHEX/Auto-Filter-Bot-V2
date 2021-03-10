@@ -149,6 +149,26 @@ async def addchannel(client: Bot, message: Message):
                 pass
     except:
         pass
+    
+    await asyncio.sleep(5)
+
+    try:
+        async for msg in client.USER.search_messages(channel_id,filter='audio'):
+            try:
+                file_name = msg.audio.file_name
+                file_id = msg.audio.file_id                    
+                link = msg.link
+                data = {
+                    '_id': file_id,
+                    'channel_id' : channel_id,
+                    'file_name': file_name,
+                    'link': link
+                }
+                docs.append(data)
+            except:
+                pass
+    except:
+        pass
 
     if docs:
         await savefiles(docs, group_id)
