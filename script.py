@@ -42,6 +42,9 @@ or
 
 * <code>/delall</code>  -  Removes all connected channels and filters from group!
 
+<i>Note : Dont add command delete bots in group! Otherwise, delall command wont work</i>
+
+
 * <code>/filterstats</code>  -  Check connected channels and number of filters.
 
 

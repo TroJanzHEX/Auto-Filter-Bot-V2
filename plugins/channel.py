@@ -98,7 +98,9 @@ async def addchannel(client: Bot, message: Message):
         return
 
     intmsg = await message.reply_text(
-        "<i>Please wait while I'm adding your channel files to DB</i>"
+        "<i>Please wait while I'm adding your channel files to DB"
+        "\n\nIt may take some time if you have more files in channel!!"
+        "\nDon't give any other commands now!</i>"
     )
 
     channel_id = chatdetails.id
@@ -233,7 +235,8 @@ async def deletechannelfilters(client: Bot, message: Message):
         return
 
     intmsg = await message.reply_text(
-        "<i>Please wait while I'm deleteing your channel</i>"
+        "<i>Please wait while I'm deleteing your channel"
+        "\n\nDon't give any other commands now!</i>"
     )
 
     channel_id = chatdetails.id
@@ -275,7 +278,8 @@ async def deleteallfilters(client: Bot, message: Message):
         return
 
     intmsg = await message.reply_to_message.reply_text(
-        "<i>Please wait while I'm deleteing your channel</i>"
+        "<i>Please wait while I'm deleteing your channel
+        "\n\nDon't give any other commands now!</i>"
     )
 
     group_id = message.reply_to_message.chat.id
