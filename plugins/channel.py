@@ -11,7 +11,7 @@ from pyrogram.types import Message
 from pyrogram.errors import UserAlreadyParticipant
 
 from bot import Bot
-from config import AUTH_USERS
+from config import AUTH_USERS, DOC_SEARCH, VID_SEARCH, MUSIC_SEARCH
 from database.mdb import (
     savefiles,
     deletefiles,
@@ -112,63 +112,67 @@ async def addchannel(client: Bot, message: Message):
         return
 
     docs = []
-    try:
-        async for msg in client.USER.search_messages(channel_id,filter='document'):
-            try:
-                file_name = msg.document.file_name
-                file_id = msg.document.file_id                    
-                link = msg.link
-                data = {
-                    '_id': file_id,
-                    'channel_id' : channel_id,
-                    'file_name': file_name,
-                    'link': link
-                }
-                docs.append(data)
-            except:
-                pass
-    except:
-        pass
-    
-    await asyncio.sleep(5)
 
-    try:
-        async for msg in client.USER.search_messages(channel_id,filter='video'):
-            try:
-                file_name = msg.video.file_name
-                file_id = msg.video.file_id                    
-                link = msg.link
-                data = {
-                    '_id': file_id,
-                    'channel_id' : channel_id,
-                    'file_name': file_name,
-                    'link': link
-                }
-                docs.append(data)
-            except:
-                pass
-    except:
-        pass
-    
-    await asyncio.sleep(5)
+    if DOC_SEARCH == "yes":
+        try:
+            async for msg in client.USER.search_messages(channel_id,filter='document'):
+                try:
+                    file_name = msg.document.file_name
+                    file_id = msg.document.file_id                    
+                    link = msg.link
+                    data = {
+                        '_id': file_id,
+                        'channel_id' : channel_id,
+                        'file_name': file_name,
+                        'link': link
+                    }
+                    docs.append(data)
+                except:
+                    pass
+        except:
+            pass
 
-    try:
-        async for msg in client.USER.search_messages(channel_id,filter='audio'):
-            try:
-                file_name = msg.audio.file_name
-                file_id = msg.audio.file_id                    
-                link = msg.link
-                data = {
-                    '_id': file_id,
-                    'channel_id' : channel_id,
-                    'file_name': file_name,
-                    'link': link
-                }
-                docs.append(data)
-            except:
-                pass
-    except:
-        pass
+        await asyncio.sleep(5)
+
+    if VID_SEARCH == "yes":
+        try:
+            async for msg in client.USER.search_messages(channel_id,filter='video'):
+                try:
+                    file_name = msg.video.file_name
+                    file_id = msg.video.file_id                    
+                    link = msg.link
+                    data = {
+                        '_id': file_id,
+                        'channel_id' : channel_id,
+                        'file_name': file_name,
+                        'link': link
+                    }
+                    docs.append(data)
+                except:
+                    pass
+        except:
+            pass
+
+        await asyncio.sleep(5)
+
+    if MUSIC_SEARCH == "yes":
+        try:
+            async for msg in client.USER.search_messages(channel_id,filter='audio'):
+                try:
+                    file_name = msg.audio.file_name
+                    file_id = msg.audio.file_id                    
+                    link = msg.link
+                    data = {
+                        '_id': file_id,
+                        'channel_id' : channel_id,
+                        'file_name': file_name,
+                        'link': link
+                    }
+                    docs.append(data)
+                except:
+                    pass
+        except:
+            pass
 
     if docs:
         await savefiles(docs, group_id)

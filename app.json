@@ -39,6 +39,18 @@
         "DATABASE_NAME": {
             "description": "Your database name from mongoDB. ( Default will 'Cluster0' )",
             "value": "Cluster0"
+        },
+        "DOC_SEARCH": {
+            "description": "Should bot search for document files in channels ( Give 'yes' or 'no' )",
+            "value": "yes"
+        },
+        "VID_SEARCH": {
+            "description": "Should bot search for video files in channels ( Give 'yes' or 'no' )",
+            "value": "no"
+        },
+        "MUSIC_SEARCH": {
+            "description": "Should bot search for music files in channels ( Give 'yes' or 'no' )",
+            "value": "no"
         }
     },
     "buildpacks": [

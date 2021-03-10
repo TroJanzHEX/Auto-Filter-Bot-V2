@@ -98,6 +98,12 @@ python3 main.py
 
 * DATABASE_NAME  - Your database name from mongoDB. Default will be 'Cluster0'
 
+* DOC_SEARCH  - Should bot search for document files ( Give 'yes' or 'no' )
+
+* VID_SEARCH  - Should bot search for video files ( Give 'yes' or 'no' )
+
+* MUSIC_SEARCH  - Should bot search for music files ( Give 'yes' or 'no' )
+
 ## Credits
 
 [![TroJanz](https://img.shields.io/badge/Pyrogram%20-%23F37626.svg?&style=for-the-badge&logo=telegram&logoColor=white)](https://github.com/pyrogram/pyrogram)

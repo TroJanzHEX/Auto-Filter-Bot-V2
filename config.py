@@ -25,6 +25,15 @@ DATABASE_NAME = os.environ.get("DATABASE_NAME", "")
 # ID of users that can use the bot commands
 AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
 
+# Should bot search for document files in channels
+DOC_SEARCH = os.environ.get("DOC_SEARCH", "yes").lower()
+
+# Should bot search for video files in channels
+VID_SEARCH = os.environ.get("VID_SEARCH", "no").lower()
+
+# Should bot search for music files in channels
+MUSIC_SEARCH = os.environ.get("MUSIC_SEARCH", "no").lower()
+
 
 
 
