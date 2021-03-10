@@ -21,6 +21,7 @@ from pyrogram.types import (
 from bot import Bot
 from script import script
 from database.mdb import searchquery
+from plugins.channel import deleteallfilters
 
 BUTTONS = {}
  
@@ -203,6 +204,14 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 disable_web_page_preview=True
             )
 
+
+        elif query.data == "delallconfirm":
+            await query.message.delete()
+            await deleteallfilters(client, query.message)
+        
+        elif query.data == "delallcancel":
+            await query.message.reply_to_message.delete()
+            await query.message.delete()
 
     else:
         await query.answer("Thats not for you!!",show_alert=True)

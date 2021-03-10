@@ -259,16 +259,26 @@ async def deletechannelfilters(client: Bot, message: Message):
 
 
 @Client.on_message(filters.group & filters.command(["delall"]))
+async def delallconfirm(client: Bot, message: Message):
+    await message.reply_text(
+        "Are you sure?? This will disconnect all connected channels and deletes all filters in group",
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton(text="YES",callback_data="delallconfirm")],
+            [InlineKeyboardButton(text="CANCEL",callback_data="delallcancel")]
+        ])
+    )
+
+
 async def deleteallfilters(client: Bot, message: Message):
 
-    if message.from_user.id not in AUTH_USERS:
+    if message.reply_to_message.from_user.id not in AUTH_USERS:
         return
 
-    intmsg = await message.reply_text(
+    intmsg = await message.reply_to_message.reply_text(
         "<i>Please wait while I'm deleteing your channel</i>"
     )
 
-    group_id = message.chat.id
+    group_id = message.reply_to_message.chat.id
 
     await deletealldetails(group_id)
 
@@ -285,7 +295,7 @@ async def deleteallfilters(client: Bot, message: Message):
     elif delete_all == 2:
         await intmsg.edit_text(
             "Couldn't delete filters. Try again after sometime.."
-        )
+        )  
 
 
 @Client.on_message(filters.group & filters.command(["filterstats"]))
