@@ -59,11 +59,11 @@ or
 
 * /filterstats  -  Check connected channels and number of filters.
 
-<!-- ## You can check the video tutorial on how to deploy
+## You can check the video tutorial on how to deploy
 
-[Click here to see tutorial video](https://youtu.be/KQVYQAOsFYY)
+[Click here to see tutorial video](https://youtu.be/zum9AUlOgtQ)
 
-Thanks to [InfotelGroup](https://telegram.dog/InFoTelGroup) and [Erich Daniken](https://telegram.dog/ErichDaniken) for the video -->
+Thanks to [InfotelGroup](https://telegram.dog/InFoTelGroup) and [Erich Daniken](https://telegram.dog/ErichDaniken) for the video
 
 ## Any bugs or errors or suggestions, report at [TroJanzSupport](https://telegram.dog/TroJanzSupport)
 
