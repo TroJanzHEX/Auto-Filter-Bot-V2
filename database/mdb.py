@@ -170,6 +170,7 @@ async def searchquery(group_id, name):
     filenames = []
     filelinks = []
 
+    # looking for a better regex :(
     pattern = name.lower().strip().replace(' ','.*')
     raw_pattern = r"\b{}\b".format(pattern)
     regex = re.compile(raw_pattern, flags=re.IGNORECASE)
