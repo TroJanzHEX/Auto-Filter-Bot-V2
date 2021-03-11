@@ -278,7 +278,7 @@ async def deleteallfilters(client: Bot, message: Message):
         return
 
     intmsg = await message.reply_to_message.reply_text(
-        "<i>Please wait while I'm deleteing your channel
+        "<i>Please wait while I'm deleteing your channel.</i>"
         "\n\nDon't give any other commands now!</i>"
     )
 
