@@ -332,10 +332,10 @@ async def stats(client: Bot, message: Message):
     await message.reply_text(stats)
 
 
-@Client.on_message(filters.channel & (filters.document | filters.video))
+@Client.on_message(filters.channel & (filters.document | filters.video | filters.audio))
 async def addnewfiles(client: Bot, message: Message):
 
-    media = message.document or message.video
+    media = message.document or message.video or message.audio
 
     channel_id = message.chat.id
     file_name = media.file_name
