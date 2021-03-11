@@ -84,7 +84,10 @@ async def filter(client: Bot, message: Message):
 
 @Client.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
-    if query.message.reply_to_message.from_user.id == query.from_user.id:
+    clicked = query.from_user.id
+    typed = query.message.reply_to_message.from_user.id
+
+    if (clicked == typed) or (clicked in AUTH_USERS):
 
         if query.data.startswith("next"):
             await query.answer()
