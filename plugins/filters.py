@@ -22,6 +22,7 @@ from bot import Bot
 from script import script
 from database.mdb import searchquery
 from plugins.channel import deleteallfilters
+from config import AUTH_USERS
 
 BUTTONS = {}
  
