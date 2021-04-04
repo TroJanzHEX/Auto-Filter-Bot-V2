@@ -3,8 +3,7 @@ class script(object):
 
     START_MSG = """ <b>Hi {}
 
-You can't use me anymore
-
+This Bot Is Made For @CinemaFactoryGroup!
 
 
 
@@ -14,7 +13,7 @@ You can't use me anymore
 For more click <i>help</i></b>"""
 
 
-    HELP_MSG = """<b>CinemaFactory</b>
+    HELP_MSG = """<b>Sorry..🥺</b>
 
 <i>
 * No Info
@@ -53,12 +52,12 @@ No need add each filter again!
 Bot will automatically search for your files and give links to that!
 
 
-<b>© @CinemaFactory</b>"""
+<b>© @CinemaFactoryGroup"""
 
 
     ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
     
-⭕️<b>Creater :</b> @CinemaFactory
+⭕️<b>Creater :</b> @CinemaFactoryGroup
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
