@@ -3,23 +3,23 @@ class script(object):
 
     START_MSG = """ <b>Hi {}
 
-You can call this as an Auto Filter Bot if you like :D
+You can't use me anymore
 
-This is Version 2 of Auto Filter Bot
 
-Bot gives button link to files in connected channels on query !
 
-No need to add filters for your files or movies from now on!
+
+
+
 
 For more click <i>help</i></b>"""
 
 
-    HELP_MSG = """<b>How to use the bot??</b>
+    HELP_MSG = """<b>CinemaFactory</b>
 
 <i>
-* Add bot to your group with admin rights.
+* No Info
 
-* Add bot to channels which you want to link with <b>all admin rights</b>!
+* No Info <b> No Info </b>!
 </i>
 
 
@@ -53,12 +53,12 @@ No need add each filter again!
 Bot will automatically search for your files and give links to that!
 
 
-<b>© @TroJanzHEX</b>"""
+<b>© @CinemaFactory</b>"""
 
 
     ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
     
-⭕️<b>Creater :</b> @TroJanzHEX
+⭕️<b>Creater :</b> @CinemaFactory
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
