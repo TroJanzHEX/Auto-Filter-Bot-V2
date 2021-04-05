@@ -7,8 +7,6 @@ class script(object):
 
 <b>© @CinemaFactoryGroup"""
 
-    ABOUT_MSG = """⭕️<b>My Name : Sukumara Kurup </b>
-    
 ⭕️<b>Creater :</b> @CinemaFactoryGroup
 
 
