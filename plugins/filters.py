@@ -189,12 +189,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 
 
         elif query.data == "about_data":
-            await query.answer()
-            await query.message.edit_text(
-                script.ABOUT_MSG,
-                #reply_markup=keyboard,
-                disable_web_page_preview=True
-            )
+            await query.answer(script.ABOUT_MSG,show_alert=True)
+        
 
 
         elif query.data == "delallconfirm":
