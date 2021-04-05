@@ -183,7 +183,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             await query.answer()
             await query.message.edit_text(
                 script.HELP_MSG,
-                reply_markup=keyboard,
+                #reply_markup=keyboard,
                 disable_web_page_preview=True
             )
 
@@ -192,7 +192,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             await query.answer()
             await query.message.edit_text(
                 script.ABOUT_MSG,
-                reply_markup=keyboard,
+                #reply_markup=keyboard,
                 disable_web_page_preview=True
             )
 
