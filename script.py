@@ -5,4 +5,4 @@ class script(object):
 
     HELP_MSG = """<b>Sorry..🥺</b>
 
-    ABOUT_MSG = """This Is Only For\n© @CinemaFactoryGroup 😎"""
+    ABOUT_MSG = """<n>Sorry..😔</b>
