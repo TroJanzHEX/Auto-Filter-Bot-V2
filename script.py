@@ -7,6 +7,6 @@ class script(object):
 
 <b>© @CinemaFactoryGroup"""
 
-    ABOUT_MSG = """<b>Sorry..🥺</b>
+    ABOUT_MSG = """Sorry..🥺
     
 """
