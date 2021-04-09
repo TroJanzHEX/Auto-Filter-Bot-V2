@@ -334,8 +334,14 @@ async def stats(client: Bot, message: Message):
 
 @Client.on_message(filters.channel & (filters.document | filters.video | filters.audio))
 async def addnewfiles(client: Bot, message: Message):
-
-    media = message.document or message.video or message.audio
+    if (message.document) & (DOC_SEARCH == "yes"):
+        media = message.document
+    elif (message.video) & (VID_SEARCH == "yes"):
+        message.video
+    elif (message.audio) & (MUSIC_SEARCH == "yes"):
+        message.audio
+    else:
+        return
 
     channel_id = message.chat.id
     file_name = media.file_name
