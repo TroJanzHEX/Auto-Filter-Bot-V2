@@ -337,9 +337,9 @@ async def addnewfiles(client: Bot, message: Message):
     if (message.document) & (DOC_SEARCH == "yes"):
         media = message.document
     elif (message.video) & (VID_SEARCH == "yes"):
-        message.video
+        media = message.video
     elif (message.audio) & (MUSIC_SEARCH == "yes"):
-        message.audio
+        media = message.audio
     else:
         return
 
