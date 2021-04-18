@@ -1,11 +1,11 @@
 class script(object):
 
 
-    START_MSG = """ <b>This Bot Is Made For @Cglitz Group!</b>"""
+    START_MSG = """ <b>This Bot Is Made For @CinemaFactoryGroup!</b>"""
 
     HELP_MSG = """<b>Sorry..🥺</b>
 
-<b>© @Ciglitz Group"""
+<b>© @CinemaFactoryGroup"""
 
     ABOUT_MSG = """Sorry..🥺
     
