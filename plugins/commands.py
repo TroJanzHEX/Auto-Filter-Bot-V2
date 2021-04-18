@@ -19,7 +19,7 @@ async def start(client, message):
                     ],
                     [
                         InlineKeyboardButton(
-                            "📜 Join Our Group 📜", url="https://t.me/Cglitz")
+                            "📜 Join Our Group 📜", url="https://t.me/Cinemafactorygroup")
                     ]
                 ]
             ),
