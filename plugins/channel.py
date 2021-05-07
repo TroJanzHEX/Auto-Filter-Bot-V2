@@ -120,12 +120,14 @@ async def addchannel(client: Bot, message: Message):
             async for msg in client.USER.search_messages(channel_id,filter='document'):
                 try:
                     file_name = msg.document.file_name
-                    file_id = msg.document.file_id                    
+                    file_id = msg.document.file_id
+                    file_size = msg.document.file_size                   
                     link = msg.link
                     data = {
                         '_id': file_id,
                         'channel_id' : channel_id,
                         'file_name': file_name,
+                        'file_size': file_size,
                         'link': link
                     }
                     docs.append(data)
@@ -141,12 +143,14 @@ async def addchannel(client: Bot, message: Message):
             async for msg in client.USER.search_messages(channel_id,filter='video'):
                 try:
                     file_name = msg.video.file_name
-                    file_id = msg.video.file_id                    
+                    file_id = msg.video.file_id   
+                    file_size = msg.video.file_size              
                     link = msg.link
                     data = {
                         '_id': file_id,
                         'channel_id' : channel_id,
                         'file_name': file_name,
+                        'file_size': file_size,
                         'link': link
                     }
                     docs.append(data)
@@ -162,12 +166,14 @@ async def addchannel(client: Bot, message: Message):
             async for msg in client.USER.search_messages(channel_id,filter='audio'):
                 try:
                     file_name = msg.audio.file_name
-                    file_id = msg.audio.file_id                    
+                    file_id = msg.audio.file_id   
+                    file_size = msg.audio.file_size                 
                     link = msg.link
                     data = {
                         '_id': file_id,
                         'channel_id' : channel_id,
                         'file_name': file_name,
+                        'file_size': file_size,
                         'link': link
                     }
                     docs.append(data)
@@ -339,6 +345,7 @@ async def addnewfiles(client: Bot, message: Message):
 
     channel_id = message.chat.id
     file_name = media.file_name
+    file_size = media.file_size
     file_id = media.file_id
     link = message.link
 
@@ -347,6 +354,7 @@ async def addnewfiles(client: Bot, message: Message):
         '_id': file_id,
         'channel_id' : channel_id,
         'file_name': file_name,
+        'file_size': file_size,
         'link': link
     }
     docs.append(data)

@@ -177,7 +177,7 @@ async def searchquery(group_id, name):
 
     query = mycol.find( {"file_name": regex} )
     for file in query:
-        filename = file['file_name']
+        filename = "[" + str(file['file_size']//1048576) + "MB] " + file['file_name']
         filenames.append(filename)
         filelink = file['link']
         filelinks.append(filelink)
