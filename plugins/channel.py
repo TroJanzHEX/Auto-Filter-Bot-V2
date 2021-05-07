@@ -127,6 +127,7 @@ async def addchannel(client: Bot, message: Message):
                         '_id': file_id,
                         'channel_id' : channel_id,
                         'file_name': file_name,
+                        'file_size': file_size,
                         'link': link
                     }
                     docs.append(data)
@@ -149,6 +150,7 @@ async def addchannel(client: Bot, message: Message):
                         '_id': file_id,
                         'channel_id' : channel_id,
                         'file_name': file_name,
+                        'file_size': file_size,
                         'link': link
                     }
                     docs.append(data)
@@ -171,6 +173,7 @@ async def addchannel(client: Bot, message: Message):
                         '_id': file_id,
                         'channel_id' : channel_id,
                         'file_name': file_name,
+                        'file_size': file_size,
                         'link': link
                     }
                     docs.append(data)
