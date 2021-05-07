@@ -345,6 +345,7 @@ async def addnewfiles(client: Bot, message: Message):
 
     channel_id = message.chat.id
     file_name = media.file_name
+    file_size = media.file_size
     file_id = media.file_id
     link = message.link
 
@@ -353,6 +354,7 @@ async def addnewfiles(client: Bot, message: Message):
         '_id': file_id,
         'channel_id' : channel_id,
         'file_name': file_name,
+        'file_size': file_size,
         'link': link
     }
     docs.append(data)
