@@ -53,12 +53,12 @@ No need add each filter again!
 Bot will automatically search for your files and give links to that!
 
 
-<b>© @TroJanzHEX</b>"""
+<b>© @FKO_KERALAM</b>"""
 
 
     ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
     
-⭕️<b>Creater :</b> @TroJanzHEX
+⭕️<b>Creater :</b> @FKO_KERALAM
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
@@ -66,4 +66,4 @@ Bot will automatically search for your files and give links to that!
 
 ⭕️<b>Tutorial Video :</b> <a href='https://youtu.be/KQVYQAOsFYY'>Video Link</a> 
 
-"""
+""
