@@ -10,7 +10,7 @@
     ],
     "website": "https://TroJanzHEX.me",
     "repository": "https://github.com/TroJanzHEX/Auto-Filter-Bot-V2",
-    "success_url": "https://telegram.dog/TroJanzHEX",
+    "success_url": "https://telegram.dog/mammukkafilms",
     "env": {
         "TG_BOT_TOKEN": {
             "description": "You Telegram Bot Token from @BotFather",
