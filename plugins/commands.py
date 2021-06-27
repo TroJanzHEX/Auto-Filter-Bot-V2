@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# @trojanzhex
-
+#edited by @dfordarkangel
 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -22,7 +19,7 @@ async def start(client, message):
                     ],
                     [
                         InlineKeyboardButton(
-                            "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/TroJanzHEX")
+                            "📜 Join Our Group 📜", url="https://t.me/Cinemafactorygroup")
                     ]
                 ]
             ),
@@ -37,41 +34,6 @@ async def help(client, message):
         await message.reply_text(
             text=script.HELP_MSG,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("BACK", callback_data="start_data"),
-                        InlineKeyboardButton("ABOUT", callback_data="about_data"),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            "⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")
-                    ]
-                ]
-            ),
-            reply_to_message_id=message.message_id
-        )
-    except:
-        pass
-
-@Client.on_message(filters.command(["about"]) & filters.private)
-async def about(client, message):
-    try:
-        await message.reply_text(
-            text=script.ABOUT_MSG,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("BACK", callback_data="help_data"),
-                        InlineKeyboardButton("START", callback_data="start_data"),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            "SOURCE CODE", url="https://github.com/TroJanzHEX/Auto-Filter-Bot-V2")
-                    ]
-                ]
-            ),
             reply_to_message_id=message.message_id
         )
     except:
