@@ -30,7 +30,7 @@ For more click <i>help</i></b>"""
 or
 * <code>/add @channelusername</code> - Links channel to your group.
 
-<i>NOTE : You can get your channel ID from @ChannelidHEXbot </i>
+<i>NOTE : You can get your channel ID from @KicchaRequest </i>
 
 
 * <code>/del channelid</code>  -  Delinks channel from group
@@ -53,17 +53,17 @@ No need add each filter again!
 Bot will automatically search for your files and give links to that!
 
 
-<b>© @TroJanzHEX</b>"""
+<b>© @KicchaRequest</b>"""
 
 
-    ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
+    ABOUT_MSG = """⭕️<b>My Name :Kiccha Auto Filter Bot V2</b>
     
-⭕️<b>Creater :</b> @TroJanzHEX
+⭕️<b>Creater :</b> @KicchaRequest
 
-⭕️<b>Language :</b> <code>Python3</code>
+⭕️<b>Language :</b> t.me/KicchaRequest
 
-⭕️<b>Library :</b> <a href='https://docs.pyrogram.org/'>Pyrogram 1.0.7</a> 
+⭕️<b>Library :</b> <a href='https://t.me/GD_FILMCLUB'>Pyrogram 1.0.7</a> 
 
-⭕️<b>Tutorial Video :</b> <a href='https://youtu.be/KQVYQAOsFYY'>Video Link</a> 
+⭕️<b>Main Channel :</b> <a href='https://t.me/ROCKHDMOVIES2021'>Video Link</a> 
 
 """
