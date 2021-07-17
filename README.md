@@ -1,4 +1,4 @@
-# Auto Filter Bot V2
+# Kiccha Filter Bot V2
 
 <p align="center">
   <a href="https://www.python.org">
