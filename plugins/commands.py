@@ -23,15 +23,15 @@ For More Details Click Help Button Below..
 
 <b>Bot Commands (Works Only In Groups) :</b>
 
-    -> <code>/add chat_id</code>
+    -> <code>/kicchaadd chat_id</code>
                 OR                  - To Connect A Group With A Channel (Bot Should Be Admin With Full Previlages In Both Group And Channel)
-     <code>/add @Username</code>
+     <code>/kicchaadd @Username</code>
      
-    -> <code>/del chat_id</code>
+    -> <code>/kicchadel chat_id</code>
                 OR                  - To disconnect A Group With A Channel
-     <code>/del @Username</code>
+     <code>/kicchadel @Username</code>
      
-    -> <code>/delall</code>  - This Command Will Disconnect All Connected Channel With The Group And Deletes All Its File From DB
+    -> <code>/kicchadelall</code>  - This Command Will Disconnect All Connected Channel With The Group And Deletes All Its File From DB
     
     -> <code>/settings</code> -  This Command Will Display You A Settings Pannel Instance Which Can Be Used To Tweek Bot's Settings Accordingly
 
