@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) @KicchaRequest
+# (c) @sachin9742s
 
 class Translation(object):
     
@@ -23,15 +23,15 @@ For More Details Click Help Button Below..
 
 <b>Bot Commands (Works Only In Groups) :</b>
 
-    -> <code>/kicchaadd chat_id</code>
+    -> <code>/add chat_id</code>
                 OR                  - To Connect A Group With A Channel (Bot Should Be Admin With Full Previlages In Both Group And Channel)
-     <code>/kicchaadd @Username</code>
+     <code>/add @Username</code>
      
-    -> <code>/kicchadel chat_id</code>
+    -> <code>/del chat_id</code>
                 OR                  - To disconnect A Group With A Channel
-     <code>/kicchadel @Username</code>
+     <code>/del @Username</code>
      
-    -> <code>/kicchadelall</code>  - This Command Will Disconnect All Connected Channel With The Group And Deletes All Its File From DB
+    -> <code>/delall</code>  - This Command Will Disconnect All Connected Channel With The Group And Deletes All Its File From DB
     
     -> <code>/settings</code> -  This Command Will Display You A Settings Pannel Instance Which Can Be Used To Tweek Bot's Settings Accordingly
 
@@ -43,7 +43,7 @@ For More Details Click Help Button Below..
             
             -> <code>Status</code> - Button Will Shows The Stats Of Your Channel
             
-@KicchaRequest
+@sachin9742s
 """
     
     ABOUT_TEXT = """<b>➥ Name</b> : <code> Auto Filter Bot</code>
