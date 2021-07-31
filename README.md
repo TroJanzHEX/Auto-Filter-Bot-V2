@@ -1,4 +1,4 @@
-# Auto Filter Bot V2
+# Kiccha Filter Bot V2
 
 <p align="center">
   <a href="https://www.python.org">
@@ -7,29 +7,29 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/TroJanzHEX/Auto-Filter-Bot-V2/stargazers">
-    <img src="https://img.shields.io/github/stars/TroJanzHEX/Auto-Filter-Bot-V2?style=social">
+  <a href="https://github.com/sachin9742s/Auto-Filter-Bot-V2/stargazers">
+    <img src="https://img.shields.io/github/stars/sachin9742s/Auto-Filter-Bot-V2?style=social">
 
   </a>
   
-  <a href="https://github.com/TroJanzHEX/Auto-Filter-Bot-V2/fork">
-    <img src="https://img.shields.io/github/forks/TroJanzHEX/Auto-Filter-Bot-V2?label=Fork&style=social">
+  <a href="https://github.com/sachin9742s/Auto-Filter-Bot-V2/fork">
+    <img src="https://img.shields.io/github/forks/sachin9742s/Auto-Filter-Bot-V2?label=Fork&style=social">
 
   </a>  
 </p>
 
-[![TroJanz](https://img.shields.io/badge/TroJanzHEX-Channel-orange?style=for-the-badge&logo=telegram)](https://telegram.dog/TroJanzHEX)  
+[![sachin9742s](https://img.shields.io/badge/-Channel-orange?style=for-the-badge&logo=telegram)](https://telegram.dog/sachin9742s)  
 ㅤㅤㅤㅤㅤㅤㅤ  
-[![TroJanz](https://img.shields.io/badge/TroJanzHEX-Support-red?style=flat&logo=telegram)](https://telegram.dog/TroJanzSupport)  [![TroJanz](https://img.shields.io/badge/TroJanzHEX-Website-red?style=flat&logo=CodersRank)](https://TroJanzHEX.me)  
+[![sachin9742s](https://img.shields.io/badge/sachin9742s-Support-red?style=flat&logo=telegram)](https://telegram.dog/KicchaRequest)  [![sachin9742s](https://img.shields.io/badge/sachin9742s-Website-red?style=flat&logo=CodersRank)](https://sachin9742s.me)  
 ㅤㅤㅤㅤㅤㅤㅤ  
-[![MIT license](https://img.shields.io/badge/License-MIT-blue?style=flat)](https://github.com/TroJanzHEX/Auto-Filter-Bot-V2/blob/main/LICENSE)  [![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/TroJanzHEX/Auto-Filter-Bot-V2)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue?style=flat)](https://github.com/sachin9742s/Auto-Filter-Bot-V2/blob/main/LICENSE)  [![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/sachin9742s/Auto-Filter-Bot-V2)
 
 
 
 
 
 #### You can call this as an Auto Filter Bot if you like :D
-#### This is Version 2 of [Auto Filter Bot](https://github.com/TroJanzHEX/Auto-Filter-Bot)
+#### This is Version 2 of [Auto Filter Bot](https://github.com/sachin9742s/Auto-Filter-Bot)
 #### Bot simply search for the files from provided channel according to given query and gives link to those files as buttons!
 
 ## How to use the bot
@@ -63,19 +63,19 @@ or
 
 [Click here to see tutorial video](https://youtu.be/zum9AUlOgtQ)
 
-Thanks to [InfotelGroup](https://telegram.dog/InFoTelGroup) and [Erich Daniken](https://telegram.dog/ErichDaniken) for the video
+Thanks to [KicchaRequest](https://telegram.dog/KicchaRequest) and [Sachin S](https://telegram.dog/sachin_official_admin) for the video
 
-## Any bugs or errors or suggestions, report at [TroJanzSupport](https://telegram.dog/TroJanzSupport)
+## Any bugs or errors or suggestions, report at [KicchaRequest](https://telegram.dog/KicchaRequest)
 
 
 ## Installation
 
 ### Deploy to Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TroJanzHEX/Auto-Filter-Bot-V2)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sachin9742s/Auto-Filter-Bot-V2)
 
 ### Deploy in your vps
 ```sh
-git clone https://github.com/TroJanzHEX/Auto-Filter-Bot-V2
+git clone https://github.com/sachin9742s/Auto-Filter-Bot-V2
 cd Auto-Filter-Bot-V2
 pip3 install -r requirements.txt
 # <Create config.py appropriately>
@@ -108,4 +108,4 @@ python3 main.py
 
 [![TroJanz](https://img.shields.io/badge/Pyrogram%20-%23F37626.svg?&style=for-the-badge&logo=telegram&logoColor=white)](https://github.com/pyrogram/pyrogram)
 
-And as always, [SpEcHlDe](https://telegram.dog/SpEcHlDe)
+And as always, [KicchaRequest](https://telegram.dog/KicchaRequest)
