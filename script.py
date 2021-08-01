@@ -3,13 +3,9 @@ class script(object):
 
     START_MSG = """ <b>Hi {}
 
-You can call this as an Auto Filter Bot if you like :D
+This Bot Made For @mammukkamovies TG channel
 
-This is Version 2 of Auto Filter Bot
-
-Bot gives button link to files in connected channels on query !
-
-No need to add filters for your files or movies from now on!
+You Will all Mammukka Movies From Our Channel
 
 For more click <i>help</i></b>"""
 
@@ -53,12 +49,12 @@ No need add each filter again!
 Bot will automatically search for your files and give links to that!
 
 
-<b>© @TroJanzHEX</b>"""
+<b>© @mammukkafilms</b>"""
 
 
     ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
     
-⭕️<b>Creater :</b> @TroJanzHEX
+⭕️<b>Creater :</b> @mammukkafilms
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
