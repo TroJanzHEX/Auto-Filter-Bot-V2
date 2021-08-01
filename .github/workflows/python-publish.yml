@@ -1,0 +1,156 @@
+@@ -1,27 +1,28 @@
+#!/usr/bin/env python3	#!/usr/bin/env python3
+# -*- coding: utf-8 -*-	# -*- coding: utf-8 -*-
+# @trojanzhex	# @trojanzhex
+import re	import re
+import pyrogram	import pyrogram
+from pyrogram import (	from pyrogram import (
+    filters,	    filters,
+    Client	    Client
+)	)
+from pyrogram.types import (	from pyrogram.types import (
+    InlineKeyboardButton, 	    InlineKeyboardButton, 
+    InlineKeyboardMarkup, 	    InlineKeyboardMarkup, 
+    Message,	    Message,
+    CallbackQuery	    CallbackQuery
+)	)
+from bot import Bot	from bot import Bot
+from script import script	from script import script
+from database.mdb import searchquery	from database.mdb import searchquery
+from plugins.channel import deleteallfilters	from plugins.channel import deleteallfilters
+from config import AUTH_USERS
+
+
+BUTTONS = {}	BUTTONS = {}
+
+
+@Client.on_message(filters.group & filters.text)	@Client.on_message(filters.group & filters.text)
+async def filter(client: Bot, message: Message):	async def filter(client: Bot, message: Message):
+    if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):	    if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
+        return	        return
+    if 2 < len(message.text) < 50:    	    if 2 < len(message.text) < 50:    
+        btn = []	        btn = []
+        group_id = message.chat.id	        group_id = message.chat.id
+        name = message.text	        name = message.text
+        filenames, links = await searchquery(group_id, name)	        filenames, links = await searchquery(group_id, name)
+        if filenames and links:	        if filenames and links:
+            for filename, link in zip(filenames, links):	            for filename, link in zip(filenames, links):
+                btn.append(	                btn.append(
+                    [InlineKeyboardButton(text=f"{filename}",url=f"{link}")]	                    [InlineKeyboardButton(text=f"{filename}",url=f"{link}")]
+                )	                )
+        else:	        else:
+            return	            return
+        if not btn:	        if not btn:
+            return	            return
+        if len(btn) > 10: 	        if len(btn) > 10: 
+            btns = list(split_list(btn, 10)) 	            btns = list(split_list(btn, 10)) 
+            keyword = f"{message.chat.id}-{message.message_id}"	            keyword = f"{message.chat.id}-{message.message_id}"
+            BUTTONS[keyword] = {	            BUTTONS[keyword] = {
+                "total" : len(btns),	                "total" : len(btns),
+                "buttons" : btns	                "buttons" : btns
+            }	            }
+        else:	        else:
+            buttons = btn	            buttons = btn
+            buttons.append(	            buttons.append(
+                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]	                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+            )	            )
+            await message.reply_text(	            await message.reply_text(
+                f"<b> Here is the result for {message.text}</b>",	                f"<b> Here is the result for {message.text}</b>",
+                reply_markup=InlineKeyboardMarkup(buttons)	                reply_markup=InlineKeyboardMarkup(buttons)
+            )	            )
+            return	            return
+        data = BUTTONS[keyword]	        data = BUTTONS[keyword]
+        buttons = data['buttons'][0].copy()	        buttons = data['buttons'][0].copy()
+        buttons.append(	        buttons.append(
+            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]	            [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
+        )    	        )    
+        buttons.append(	        buttons.append(
+            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]	            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
+        )	        )
+        await message.reply_text(	        await message.reply_text(
+                f"<b> Here is the result for {message.text}</b>",	                f"<b> Here is the result for {message.text}</b>",
+                reply_markup=InlineKeyboardMarkup(buttons)	                reply_markup=InlineKeyboardMarkup(buttons)
+            )    	            )    
+@Client.on_callback_query()	@Client.on_callback_query()
+async def cb_handler(client: Bot, query: CallbackQuery):	async def cb_handler(client: Bot, query: CallbackQuery):
+    clicked = query.from_user.id	    clicked = query.from_user.id
+    typed = query.message.reply_to_message.from_user.id	    typed = query.message.reply_to_message.from_user.id
+    if (clicked == typed) or (clicked in AUTH_USERS):	    if (clicked == typed) or (clicked in AUTH_USERS):
+        if query.data.startswith("next"):	        if query.data.startswith("next"):
+            await query.answer()	            await query.answer()
+            ident, index, keyword = query.data.split("_")	            ident, index, keyword = query.data.split("_")
+            data = BUTTONS[keyword]	            data = BUTTONS[keyword]
+            if int(index) == int(data["total"]) - 2:	            if int(index) == int(data["total"]) - 2:
+                buttons = data['buttons'][int(index)+1].copy()	                buttons = data['buttons'][int(index)+1].copy()
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]	                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
+                )	                )
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]	                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                )	                )
+                await query.edit_message_reply_markup( 	                await query.edit_message_reply_markup( 
+                    reply_markup=InlineKeyboardMarkup(buttons)	                    reply_markup=InlineKeyboardMarkup(buttons)
+                )	                )
+                return	                return
+            else:	            else:
+                buttons = data['buttons'][int(index)+1].copy()	                buttons = data['buttons'][int(index)+1].copy()
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]	                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
+                )	                )
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]	                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                )	                )
+                await query.edit_message_reply_markup( 	                await query.edit_message_reply_markup( 
+                    reply_markup=InlineKeyboardMarkup(buttons)	                    reply_markup=InlineKeyboardMarkup(buttons)
+                )	                )
+                return	                return
+        elif query.data.startswith("back"):	        elif query.data.startswith("back"):
+            await query.answer()	            await query.answer()
+            ident, index, keyword = query.data.split("_")	            ident, index, keyword = query.data.split("_")
+            data = BUTTONS[keyword] 	            data = BUTTONS[keyword] 
+            if int(index) == 1:	            if int(index) == 1:
+                buttons = data['buttons'][int(index)-1].copy()	                buttons = data['buttons'][int(index)-1].copy()
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]	                    [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                )	                )
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]	                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                )	                )
+                await query.edit_message_reply_markup( 	                await query.edit_message_reply_markup( 
+                    reply_markup=InlineKeyboardMarkup(buttons)	                    reply_markup=InlineKeyboardMarkup(buttons)
+                )	                )
+                return   	                return   
+            else:	            else:
+                buttons = data['buttons'][int(index)-1].copy()	                buttons = data['buttons'][int(index)-1].copy()
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]	                    [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
+                )	                )
+                buttons.append(	                buttons.append(
+                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]	                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                )	                )
+                await query.edit_message_reply_markup( 	                await query.edit_message_reply_markup( 
+                    reply_markup=InlineKeyboardMarkup(buttons)	                    reply_markup=InlineKeyboardMarkup(buttons)
+                )	                )
+                return	                return
+        elif query.data == "pages":	        elif query.data == "pages":
+            await query.answer()	            await query.answer()
+        elif query.data == "start_data":	        elif query.data == "start_data":
+            await query.answer()	            await query.answer()
+            keyboard = InlineKeyboardMarkup([	            keyboard = InlineKeyboardMarkup([
+                [InlineKeyboardButton("HELP", callback_data="help_data"),	                [InlineKeyboardButton("HELP", callback_data="help_data"),
+                    InlineKeyboardButton("ABOUT", callback_data="about_data")],	                    InlineKeyboardButton("ABOUT", callback_data="about_data")],
+                [InlineKeyboardButton("⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/Movie_House_1")]	                [InlineKeyboardButton("⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/TroJanzHEX")]
+            ])	            ])
+            await query.message.edit_text(	            await query.message.edit_text(
+                script.START_MSG.format(query.from_user.mention),	                script.START_MSG.format(query.from_user.mention),
+                reply_markup=keyboard,	                reply_markup=keyboard,
+                disable_web_page_preview=True	                disable_web_page_preview=True
+            )	            )
+        elif query.data == "help_data":	        elif query.data == "help_data":
+            await query.answer()	            await query.answer()
+            keyboard = InlineKeyboardMarkup([	            keyboard = InlineKeyboardMarkup([
+                [InlineKeyboardButton("BACK", callback_data="start_data"),	                [InlineKeyboardButton("BACK", callback_data="start_data"),
+                    InlineKeyboardButton("ABOUT", callback_data="about_data")],	                    InlineKeyboardButton("ABOUT", callback_data="about_data")],
+                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/Movie_House_1")]	                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
+            ])	            ])
+
