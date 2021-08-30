@@ -61,11 +61,11 @@ or
 
 ## You can check the video tutorial on how to deploy
 
-[Click here to see tutorial video](https://youtu.be/zum9AUlOgtQ)
+[Click here to see tutorial video](https://t.me/GuhenArmy/2)
 
-Thanks to [InfotelGroup](https://telegram.dog/InFoTelGroup) and [Erich Daniken](https://telegram.dog/ErichDaniken) for the video
+Thanks to [InfotelGroup](https://telegram.dog/NewMoviesPF) and [Aagath](https://telegram.dog/Aagath Ser) for the video
 
-## Any bugs or errors or suggestions, report at [TroJanzSupport](https://telegram.dog/TroJanzSupport)
+## Any bugs or errors or suggestions, report at [PrimeFlix](https://telegram.dog/PrimeFlixMovies)
 
 
 ## Installation
@@ -108,4 +108,4 @@ python3 main.py
 
 [![TroJanz](https://img.shields.io/badge/Pyrogram%20-%23F37626.svg?&style=for-the-badge&logo=telegram&logoColor=white)](https://github.com/pyrogram/pyrogram)
 
-And as always, [SpEcHlDe](https://telegram.dog/SpEcHlDe)
+And as always, [Aagath](https://telegram.dog/Aagath)
