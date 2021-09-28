@@ -177,7 +177,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("HELP", callback_data="help_data"),
                     InlineKeyboardButton("ABOUT", callback_data="about_data")],
-                [InlineKeyboardButton("⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/TroJanzHEX")]
+                [InlineKeyboardButton("📜 Join our Group 📜", url="https://t.me/CinemaFactoryGroup")]
             ])
 
             await query.message.edit_text(
@@ -189,32 +189,16 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 
         elif query.data == "help_data":
             await query.answer()
-            keyboard = InlineKeyboardMarkup([
-                [InlineKeyboardButton("BACK", callback_data="start_data"),
-                    InlineKeyboardButton("ABOUT", callback_data="about_data")],
-                [InlineKeyboardButton("⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")]
-            ])
-
             await query.message.edit_text(
                 script.HELP_MSG,
-                reply_markup=keyboard,
+                #reply_markup=keyboard,
                 disable_web_page_preview=True
             )
 
 
         elif query.data == "about_data":
-            await query.answer()
-            keyboard = InlineKeyboardMarkup([
-                [InlineKeyboardButton("BACK", callback_data="help_data"),
-                    InlineKeyboardButton("START", callback_data="start_data")],
-                [InlineKeyboardButton("SOURCE CODE", url="https://github.com/TroJanzHEX/Auto-Filter-Bot-V2")]
-            ])
-
-            await query.message.edit_text(
-                script.ABOUT_MSG,
-                reply_markup=keyboard,
-                disable_web_page_preview=True
-            )
+            await query.answer(script.ABOUT_MSG,show_alert=True)
+        
 
 
         elif query.data == "delallconfirm":
