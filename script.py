@@ -3,15 +3,11 @@ class script(object):
 
     START_MSG = """ <b>Hi {}
 
-You can call this as an Auto Filter Bot if you like :D
-
-This is Version 2 of Auto Filter Bot
-
-Bot gives button link to files in connected channels on query !
-
-No need to add filters for your files or movies from now on!
-
-For more click <i>help</i></b>"""
+A.I 
+An enhanced auto filter bot made by @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk
+No need to give commands
+Only Works for my creator
+For more click <i>HOW TO USE</i></b>"""
 
 
     HELP_MSG = """<b>How to use the bot??</b>
