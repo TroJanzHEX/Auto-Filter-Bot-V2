@@ -207,7 +207,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("BACK", callback_data="help_data"),
                     InlineKeyboardButton("START", callback_data="start_data")],
-                [InlineKeyboardButton("SOURCE CODE", url="https://t.me/thewarriorsreal")]
+                [InlineKeyboardButton("SOURCE CODE", url="https://t.me/ANKIT3690")]
             ])
 
             await query.message.edit_text(
@@ -226,7 +226,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             await query.message.delete()
 
     else:
-        await query.answer("Thats not for you!!if you want request it first @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk",show_alert=True)
+        await query.answer("Thats not for you!!if you want request it first OWNER: @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk",show_alert=True)
 
 
 def split_list(l, n):
