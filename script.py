@@ -1,17 +1,25 @@
 class script(object):
 
 
-    START_MSG = """ <b>Hi {}
+    START_MSG = """ <b>ꫝ𝓲 {}
 
-You can call this as an Auto Filter Bot if you like :D
+𝐀.𝐈 
 
-This is Version 2 of Auto Filter Bot
+𝐀𝐧 𝐞𝐧𝐡𝐚𝐧𝐜𝐞𝐝 𝐚𝐮𝐭𝐨 𝐟𝐢𝐥𝐭𝐞𝐫 𝐛𝐨𝐭 𝐦𝐚𝐝𝐞 𝐛𝐲 @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk
 
-Bot gives button link to files in connected channels on query !
+𝐍𝐨 𝐧𝐞𝐞𝐝 𝐭𝐨 𝐠𝐢𝐯𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬
 
-No need to add filters for your files or movies from now on!
+𝐎𝐧𝐥𝐲 𝐖𝐨𝐫𝐤𝐬 𝐟𝐨𝐫 𝐦𝐲 𝐜𝐫𝐞𝐚𝐭𝐨𝐫
 
-For more click <i>help</i></b>"""
+
+
+
+
+
+
+
+
+𝐅𝐨𝐫 𝐦𝐨𝐫𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬 𝐂𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 <i>help</i></b>"""
 
 
     HELP_MSG = """<b>How to use the bot??</b>
@@ -53,17 +61,17 @@ No need add each filter again!
 Bot will automatically search for your files and give links to that!
 
 
-<b>© @TroJanzHEX</b>"""
+<b>© @thewarriorsreal</b>"""
 
 
-    ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
+    ABOUT_MSG = """⭕️<b>My Name : 𝓽ꫝꫀ ᥴ𝘳ꫀꪖ𝓽ꪮ𝘳 ꪮᠻ ꪖꪶꪶ</b>
     
-⭕️<b>Creater :</b> @TroJanzHEX
+⭕️<b>Creater :</b> @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
 ⭕️<b>Library :</b> <a href='https://docs.pyrogram.org/'>Pyrogram 1.0.7</a> 
 
-⭕️<b>Tutorial Video :</b> <a href='https://youtu.be/KQVYQAOsFYY'>Video Link</a> 
+⭕️<b>𝓳ꪮ𝓲ꪀ ꪮꪊ𝘳 ᧁ𝘳ꪮꪊρ :</b> <a href='thewarriorsreal'>𝓽ꫝꫀ ᥴ𝘳ꫀꪖ𝓽ꪮ𝘳 ꪮᠻ ꪖꪶꪶ</a>
 
 """
