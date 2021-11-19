@@ -11,15 +11,7 @@ class script(object):
 
 𝐎𝐧𝐥𝐲 𝐖𝐨𝐫𝐤𝐬 𝐟𝐨𝐫 𝐦𝐲 𝐜𝐫𝐞𝐚𝐭𝐨𝐫
 
-
-
-
-
-
-
-
-
-𝐅𝐨𝐫 𝐦𝐨𝐫𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬 𝐂𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 <i>help</i></b>"""
+𝐅𝐨𝐫 𝐦𝐨𝐫𝐞 𝐃𝐞𝐭𝐚𝐢𝐥𝐬 𝐂𝐥𝐢𝐜𝐤 𝐛𝐞𝐥𝐨𝐰 <i>How to use?</i></b>"""
 
 
     HELP_MSG = """<b>How to use the bot??</b>
