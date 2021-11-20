@@ -219,7 +219,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             await query.message.delete()
 
     else:
-        await query.answer("Thats not for you!! 😏 If you want it request it again OWNER: @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk,show_alert=True)
+        await query.answer("OWNER: @ANKIT3690 &@Saurav3BV6SA9LLElon7Musk Thats not for you!! 😏 If you want it request it again",show_alert=True)
 
 
 def split_list(l, n):
