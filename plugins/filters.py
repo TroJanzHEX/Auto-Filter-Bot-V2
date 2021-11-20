@@ -212,7 +212,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             keyboard = InlineKeyboardMarkup([
                 [InlineKeyboardButton("BACK", callback_data="help_data"),
                     InlineKeyboardButton("START", callback_data="start_data")],
-                [InlineKeyboardButton("OWNER", url="https://t.me/ANKIT3690")]
+                [InlineKeyboardButton("OWNER", url="https://t.me/ANKIT3690")],
+                [InlinekeyboardButton ("OWNER", url="https://t.me/Saurav3BV6SA9LLElon7Musk")]
             ])
 
             await query.message.edit_text(
