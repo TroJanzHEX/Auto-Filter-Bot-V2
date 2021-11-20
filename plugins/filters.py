@@ -76,14 +76,8 @@ async def filter(client: Bot, message: Message):
         buttons.append(
             [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
 
-        buttons.append(
-            [InlinekeyboardButton(text="@ANKIT3690", callback_data="OWNER")]
-        )
-        buttons.append(
-            [InlinekeyboardButton (text="@Saurav3BV6SA9LLElon7Musk", callback_data="OWNER")]
-
         await message.reply_text(
-                f"<b> Here is the result for {message.text}</b>",
+                f"<b> Here is the result for {message.text} OWNER: @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )    
 
