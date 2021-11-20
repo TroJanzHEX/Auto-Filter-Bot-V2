@@ -76,7 +76,7 @@ async def filter(client: Bot, message: Message):
         buttons.append(
             [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
 
-        butttons.append(
+        buttons.append(
             [InlinekeyboardButton(text="@ANKIT3690", callback_data="OWNER")]
         )
         buttons.append(
