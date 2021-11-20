@@ -64,6 +64,6 @@ Bot will automatically search for your files and give links to that!
 
 ⭕️<b>Library :</b> <a href='https://docs.pyrogram.org/'>Pyrogram 1.0.7</a> 
 
-⭕️<b>𝓳ꪮ𝓲ꪀ ꪮꪊ𝘳 ᧁ𝘳ꪮꪊρ :</b> <a href='thewarriorsreal'>𝓽ꫝꫀ ᥴ𝘳ꫀꪖ𝓽ꪮ𝘳 ꪮᠻ ꪖꪶꪶ</a>
+⭕️<b>𝓳ꪮ𝓲ꪀ ꪮꪊ𝘳 ᧁ𝘳ꪮꪊρ :</b> <a href='https://t.me/thewarriorsreal'>𝓽ꫝꫀ ᥴ𝘳ꫀꪖ𝓽ꪮ𝘳 ꪮᠻ ꪖꪶꪶ</a>
 
 """
