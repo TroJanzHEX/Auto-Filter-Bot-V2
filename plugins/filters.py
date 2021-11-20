@@ -80,8 +80,7 @@ async def filter(client: Bot, message: Message):
                 f"<b> Here is the result for {message.text} OWNER: @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )    
-
-
+            return
 @Client.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     clicked = query.from_user.id
