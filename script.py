@@ -3,15 +3,11 @@ class script(object):
 
     START_MSG = """ <b>Hi {}
 
-You can call this as an Auto Filter Bot if you like :D
-
-This is Version 2 of Auto Filter Bot
-
-Bot gives button link to files in connected channels on query !
-
-No need to add filters for your files or movies from now on!
-
-For more click <i>help</i></b>"""
+A.I 
+An enhanced auto filter bot made by @ANKIT3690 & @Saurav3BV6SA9LLElon7Musk
+No need to give commands
+Only Works for my creator
+For more click <i>HOW TO USE</i></b>"""
 
 
     HELP_MSG = """<b>How to use the bot??</b>
@@ -53,17 +49,19 @@ No need add each filter again!
 Bot will automatically search for your files and give links to that!
 
 
-<b>© @TroJanzHEX</b>"""
+<b>© @thewarriorsreal</b>"""
 
 
-    ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
+    ABOUT_MSG = """⭕️<b>My Name : 𝓽ꫝꫀ ᥴ𝘳ꫀꪖ𝓽ꪮ𝘳 ꪮᠻ ꪖꪶꪶ</b>
     
-⭕️<b>Creater :</b> @TroJanzHEX
+⭕️<b>Creater :</b> @ANKIT3690
+
+⭕️<b>Creater :</b> @Saurav3BV6SA9LLElon7Musk
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
 ⭕️<b>Library :</b> <a href='https://docs.pyrogram.org/'>Pyrogram 1.0.7</a> 
 
-⭕️<b>Tutorial Video :</b> <a href='https://youtu.be/KQVYQAOsFYY'>Video Link</a> 
+⭕️<b>Tutorial Video :</b> <a href='https://t.me/thewarriorsreal'>THE CREATOR OF ALL</a> 
 
 """
