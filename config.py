@@ -29,10 +29,10 @@ AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
 DOC_SEARCH = os.environ.get("DOC_SEARCH", "yes").lower()
 
 # Should bot search for video files in channels
-VID_SEARCH = os.environ.get("VID_SEARCH", "no").lower()
+VID_SEARCH = os.environ.get("VID_SEARCH", "yes").lower()
 
 # Should bot search for music files in channels
-MUSIC_SEARCH = os.environ.get("MUSIC_SEARCH", "no").lower()
+MUSIC_SEARCH = os.environ.get("MUSIC_SEARCH", "yes").lower()
 
 
 

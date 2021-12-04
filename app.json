@@ -46,11 +46,11 @@
         },
         "VID_SEARCH": {
             "description": "Should bot search for video files in channels ( Give 'yes' or 'no' )",
-            "value": "no"
+            "value": "yes"
         },
         "MUSIC_SEARCH": {
             "description": "Should bot search for music files in channels ( Give 'yes' or 'no' )",
-            "value": "no"
+            "value": "yes"
         }
     },
     "buildpacks": [
