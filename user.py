@@ -33,7 +33,7 @@ class User(Client):
         self.set_parse_mode("html")
         return (self, usr_bot_me.id)
 
-    async def stop(self, *args):
-        await super().stop()
-        self.LOGGER(__name__).info("Bot stopped. Bye.")
+    async def start(self, *args):
+        await super().start()
+        self.LOGGER(__name__).info("Bot started. Welcome.")
  
