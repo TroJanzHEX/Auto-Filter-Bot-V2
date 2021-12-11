@@ -3,12 +3,7 @@ class script(object):
 
     START_MSG = """ <b>Hi {}
 
-You can call this as an Auto Filter Bot if you like :D
-
-This is Version 2 of Auto Filter Bot
-
-Bot gives button link to files in connected channels on query !
-
+I am an auto filter bot made for mvie house group!
 No need to add filters for your files or movies from now on!
 
 For more click <i>help</i></b>"""
@@ -29,9 +24,6 @@ For more click <i>help</i></b>"""
 * <code>/add channelid</code>  -  Links channel to your group.
 or
 * <code>/add @channelusername</code> - Links channel to your group.
-
-<i>NOTE : You can get your channel ID from @ChannelidHEXbot </i>
-
 
 * <code>/del channelid</code>  -  Delinks channel from group
 or
@@ -58,7 +50,7 @@ Bot will automatically search for your files and give links to that!
 
     ABOUT_MSG = """⭕️<b>My Name : Auto Filter Bot V2</b>
     
-⭕️<b>Creater :</b> @TroJanzHEX
+⭕️<b>Creater :</b> @DhyanKN
 
 ⭕️<b>Language :</b> <code>Python3</code>
 
